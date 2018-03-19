@@ -490,9 +490,13 @@ char *yytext;
 #ifndef TRUE
 	#define TRUE 1
 #endif
+
 int errors = 0;
-#line 494 "lex.yy.c"
-#line 495 "lex.yy.c"
+
+void yyerror(char *s);
+
+#line 498 "lex.yy.c"
+#line 499 "lex.yy.c"
 
 #define INITIAL 0
 
@@ -709,9 +713,9 @@ YY_DECL
 		}
 
 	{
-#line 22 "C-.l"
+#line 26 "C-.l"
 
-#line 714 "lex.yy.c"
+#line 718 "lex.yy.c"
 
 	while ( /*CONSTCOND*/1 )		/* loops until end-of-file is reached */
 		{
@@ -770,7 +774,7 @@ do_action:	/* This label is used only to access EOF actions. */
 
 case 1:
 YY_RULE_SETUP
-#line 23 "C-.l"
+#line 27 "C-.l"
 {
 	char c;
 	int end = FALSE;
@@ -785,170 +789,170 @@ YY_RULE_SETUP
 case 2:
 /* rule 2 can match eol */
 YY_RULE_SETUP
-#line 34 "C-.l"
+#line 38 "C-.l"
 {}
 	YY_BREAK
 case 3:
 YY_RULE_SETUP
-#line 35 "C-.l"
+#line 39 "C-.l"
 {}
 	YY_BREAK
 case 4:
 YY_RULE_SETUP
-#line 37 "C-.l"
-{ printf("%s ELSE\n", yytext); }
+#line 41 "C-.l"
+{ fprintf(yyout, "%s ELSE\n", yytext); }
 	YY_BREAK
 case 5:
 YY_RULE_SETUP
-#line 38 "C-.l"
-{ printf("%s IF\n", yytext); }
+#line 42 "C-.l"
+{ fprintf(yyout, "%s IF\n", yytext); }
 	YY_BREAK
 case 6:
 YY_RULE_SETUP
-#line 39 "C-.l"
-{ printf("%s INT\n", yytext); }
+#line 43 "C-.l"
+{ fprintf(yyout, "%s INT\n", yytext); }
 	YY_BREAK
 case 7:
 YY_RULE_SETUP
-#line 40 "C-.l"
-{ printf("%s RETURN\n", yytext); }
+#line 44 "C-.l"
+{ fprintf(yyout, "%s RETURN\n", yytext); }
 	YY_BREAK
 case 8:
 YY_RULE_SETUP
-#line 41 "C-.l"
-{ printf("%s VOID\n", yytext); }
+#line 45 "C-.l"
+{ fprintf(yyout, "%s VOID\n", yytext); }
 	YY_BREAK
 case 9:
 YY_RULE_SETUP
-#line 42 "C-.l"
-{ printf("%s while\n", yytext); }
+#line 46 "C-.l"
+{ fprintf(yyout, "%s while\n", yytext); }
 	YY_BREAK
 case 10:
 YY_RULE_SETUP
-#line 43 "C-.l"
-{ printf("%s INPUT\n", yytext); }
+#line 47 "C-.l"
+{ fprintf(yyout, "%s INPUT\n", yytext); }
 	YY_BREAK
 case 11:
 YY_RULE_SETUP
-#line 44 "C-.l"
-{ printf("%s OUTPUT\n", yytext); }
+#line 48 "C-.l"
+{ fprintf(yyout, "%s OUTPUT\n", yytext); }
 	YY_BREAK
 case 12:
 YY_RULE_SETUP
-#line 46 "C-.l"
-{ printf("%s SOMA\n", yytext); }
+#line 50 "C-.l"
+{ fprintf(yyout, "%s SOMA\n", yytext); }
 	YY_BREAK
 case 13:
 YY_RULE_SETUP
-#line 47 "C-.l"
-{ printf("%s SUB\n", yytext); }
+#line 51 "C-.l"
+{ fprintf(yyout, "%s SUB\n", yytext); }
 	YY_BREAK
 case 14:
 YY_RULE_SETUP
-#line 48 "C-.l"
-{ printf("%s MUL\n", yytext); }
+#line 52 "C-.l"
+{ fprintf(yyout, "%s MUL\n", yytext); }
 	YY_BREAK
 case 15:
 YY_RULE_SETUP
-#line 49 "C-.l"
-{ printf("%s DIV\n", yytext); }
+#line 53 "C-.l"
+{ fprintf(yyout, "%s DIV\n", yytext); }
 	YY_BREAK
 case 16:
 YY_RULE_SETUP
-#line 50 "C-.l"
-{ printf("%s MENOR\n", yytext); }
+#line 54 "C-.l"
+{ fprintf(yyout, "%s MENOR\n", yytext); }
 	YY_BREAK
 case 17:
 YY_RULE_SETUP
-#line 51 "C-.l"
-{ printf("%s MEIGUAL\n", yytext); }
+#line 55 "C-.l"
+{ fprintf(yyout, "%s MEIGUAL\n", yytext); }
 	YY_BREAK
 case 18:
 YY_RULE_SETUP
-#line 52 "C-.l"
-{ printf("%s MAIOR\n", yytext); }
+#line 56 "C-.l"
+{ fprintf(yyout, "%s MAIOR\n", yytext); }
 	YY_BREAK
 case 19:
 YY_RULE_SETUP
-#line 53 "C-.l"
-{ printf("%s MAIGUAL\n", yytext); }
+#line 57 "C-.l"
+{ fprintf(yyout, "%s MAIGUAL\n", yytext); }
 	YY_BREAK
 case 20:
 YY_RULE_SETUP
-#line 54 "C-.l"
-{ printf("%s IGUAL\n", yytext); }
+#line 58 "C-.l"
+{ fprintf(yyout, "%s IGUAL\n", yytext); }
 	YY_BREAK
 case 21:
 YY_RULE_SETUP
-#line 55 "C-.l"
-{ printf("%s DIF\n", yytext); }
+#line 59 "C-.l"
+{ fprintf(yyout, "%s DIF\n", yytext); }
 	YY_BREAK
 case 22:
 YY_RULE_SETUP
-#line 56 "C-.l"
-{ printf("%s ATRIB\n", yytext); }
+#line 60 "C-.l"
+{ fprintf(yyout, "%s ATRIB\n", yytext); }
 	YY_BREAK
 case 23:
 YY_RULE_SETUP
-#line 57 "C-.l"
-{ printf("%s PV\n", yytext); }
+#line 61 "C-.l"
+{ fprintf(yyout, "%s PV\n", yytext); }
 	YY_BREAK
 case 24:
 YY_RULE_SETUP
-#line 58 "C-.l"
-{ printf("%s ,\n", yytext); }
+#line 62 "C-.l"
+{ fprintf(yyout, "%s ,\n", yytext); }
 	YY_BREAK
 case 25:
 YY_RULE_SETUP
-#line 59 "C-.l"
-{ printf("%s AP\n", yytext); }
+#line 63 "C-.l"
+{ fprintf(yyout, "%s AP\n", yytext); }
 	YY_BREAK
 case 26:
 YY_RULE_SETUP
-#line 60 "C-.l"
-{ printf("%s FP\n", yytext); }
+#line 64 "C-.l"
+{ fprintf(yyout, "%s FP\n", yytext); }
 	YY_BREAK
 case 27:
 YY_RULE_SETUP
-#line 61 "C-.l"
-{ printf("%s AC\n", yytext); }
+#line 65 "C-.l"
+{ fprintf(yyout, "%s AC\n", yytext); }
 	YY_BREAK
 case 28:
 YY_RULE_SETUP
-#line 62 "C-.l"
-{ printf("%s FC\n", yytext); }
+#line 66 "C-.l"
+{ fprintf(yyout, "%s FC\n", yytext); }
 	YY_BREAK
 case 29:
 YY_RULE_SETUP
-#line 63 "C-.l"
-{ printf("%s ACH\n", yytext); }
+#line 67 "C-.l"
+{ fprintf(yyout, "%s ACH\n", yytext); }
 	YY_BREAK
 case 30:
 YY_RULE_SETUP
-#line 64 "C-.l"
-{ printf("%s FCH\n", yytext); }
+#line 68 "C-.l"
+{ fprintf(yyout, "%s FCH\n", yytext); }
 	YY_BREAK
 case 31:
 YY_RULE_SETUP
-#line 66 "C-.l"
-{ printf("%s ID\n", yytext); }
+#line 70 "C-.l"
+{ fprintf(yyout, "%s ID\n", yytext); }
 	YY_BREAK
 case 32:
 YY_RULE_SETUP
-#line 67 "C-.l"
-{ printf("%s NUM\n", yytext); }
+#line 71 "C-.l"
+{ fprintf(yyout, "%s NUM\n", yytext); }
 	YY_BREAK
 case 33:
 YY_RULE_SETUP
-#line 70 "C-.l"
+#line 74 "C-.l"
 { yyerror(yytext); }
 	YY_BREAK
 case 34:
 YY_RULE_SETUP
-#line 72 "C-.l"
+#line 76 "C-.l"
 ECHO;
 	YY_BREAK
-#line 951 "lex.yy.c"
+#line 955 "lex.yy.c"
 case YY_STATE_EOF(INITIAL):
 	yyterminate();
 
@@ -1953,14 +1957,25 @@ void yyfree (void * ptr )
 
 #define YYTABLES_NAME "yytables"
 
-#line 72 "C-.l"
+#line 76 "C-.l"
 
 void yyerror(char *s) {
     errors = errors + 1;
-	printf("%s ERROR\n", s);
+	fprintf(yyout, "%s ERROR\n", s);
 }
 
-int main(){
+int main(int argc, char* argv[]){
+	if (argc > 1){
+		yyin = fopen(argv[1], "r");
+		yyout = fopen ("relatorio.txt","w");
+	}
+	else {
+		printf("Usage: ./gcc- filename.c-\n");
+		return 1;
+	}
+
+	fprintf(yyout, "%d erro(s) encontrado(s)\n", errors);
 	yylex();
-	printf("%d erro\(s\) encontrado\(s\)\n", errors);
+
+	return 0;
 }

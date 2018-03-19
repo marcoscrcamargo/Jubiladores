@@ -8,7 +8,11 @@
 #ifndef TRUE
 	#define TRUE 1
 #endif
+
 int errors = 0;
+
+void yyerror(char *s);
+
 %}
 
 digit		[0-9]
@@ -34,37 +38,37 @@ whitespace  [ \t]+
 {newline}		{}
 {whitespace} 	{}
 
-"else"		{ printf("%s ELSE\n", yytext); }
-"if"		{ printf("%s IF\n", yytext); }
-"int"		{ printf("%s INT\n", yytext); }
-"return"	{ printf("%s RETURN\n", yytext); }
-"void"		{ printf("%s VOID\n", yytext); }
-"while"		{ printf("%s while\n", yytext); }
-"input"		{ printf("%s INPUT\n", yytext); }
-"output"	{ printf("%s OUTPUT\n", yytext); }
+"else"		{ fprintf(yyout, "%s ELSE\n", yytext); }
+"if"		{ fprintf(yyout, "%s IF\n", yytext); }
+"int"		{ fprintf(yyout, "%s INT\n", yytext); }
+"return"	{ fprintf(yyout, "%s RETURN\n", yytext); }
+"void"		{ fprintf(yyout, "%s VOID\n", yytext); }
+"while"		{ fprintf(yyout, "%s while\n", yytext); }
+"input"		{ fprintf(yyout, "%s INPUT\n", yytext); }
+"output"	{ fprintf(yyout, "%s OUTPUT\n", yytext); }
 
-"+"			{ printf("%s SOMA\n", yytext); }
-"-"			{ printf("%s SUB\n", yytext); }
-"*"			{ printf("%s MUL\n", yytext); }
-"/"			{ printf("%s DIV\n", yytext); }
-"<"			{ printf("%s MENOR\n", yytext); }
-"<="		{ printf("%s MEIGUAL\n", yytext); }
-">"			{ printf("%s MAIOR\n", yytext); }
-">="		{ printf("%s MAIGUAL\n", yytext); }
-"=="		{ printf("%s IGUAL\n", yytext); }
-"!="		{ printf("%s DIF\n", yytext); }
-"="			{ printf("%s ATRIB\n", yytext); }
-";"			{ printf("%s PV\n", yytext); }
-","			{ printf("%s ,\n", yytext); }
-"("			{ printf("%s AP\n", yytext); }
-")"			{ printf("%s FP\n", yytext); }
-"["			{ printf("%s AC\n", yytext); }
-"]"			{ printf("%s FC\n", yytext); }
-"{"			{ printf("%s ACH\n", yytext); }
-"}"			{ printf("%s FCH\n", yytext); }
+"+"			{ fprintf(yyout, "%s SOMA\n", yytext); }
+"-"			{ fprintf(yyout, "%s SUB\n", yytext); }
+"*"			{ fprintf(yyout, "%s MUL\n", yytext); }
+"/"			{ fprintf(yyout, "%s DIV\n", yytext); }
+"<"			{ fprintf(yyout, "%s MENOR\n", yytext); }
+"<="		{ fprintf(yyout, "%s MEIGUAL\n", yytext); }
+">"			{ fprintf(yyout, "%s MAIOR\n", yytext); }
+">="		{ fprintf(yyout, "%s MAIGUAL\n", yytext); }
+"=="		{ fprintf(yyout, "%s IGUAL\n", yytext); }
+"!="		{ fprintf(yyout, "%s DIF\n", yytext); }
+"="			{ fprintf(yyout, "%s ATRIB\n", yytext); }
+";"			{ fprintf(yyout, "%s PV\n", yytext); }
+","			{ fprintf(yyout, "%s ,\n", yytext); }
+"("			{ fprintf(yyout, "%s AP\n", yytext); }
+")"			{ fprintf(yyout, "%s FP\n", yytext); }
+"["			{ fprintf(yyout, "%s AC\n", yytext); }
+"]"			{ fprintf(yyout, "%s FC\n", yytext); }
+"{"			{ fprintf(yyout, "%s ACH\n", yytext); }
+"}"			{ fprintf(yyout, "%s FCH\n", yytext); }
 
-{ID}			{ printf("%s ID\n", yytext); }
-{NUM}			{ printf("%s NUM\n", yytext); }
+{ID}			{ fprintf(yyout, "%s ID\n", yytext); }
+{NUM}			{ fprintf(yyout, "%s NUM\n", yytext); }
 
 
 .  { yyerror(yytext); }
@@ -72,10 +76,21 @@ whitespace  [ \t]+
 %%
 void yyerror(char *s) {
     errors = errors + 1;
-	printf("%s ERROR\n", s);
+	fprintf(yyout, "%s ERROR\n", s);
 }
 
-int main(){
+int main(int argc, char* argv[]){
+	if (argc > 1){
+		yyin = fopen(argv[1], "r");
+		yyout = fopen ("relatorio.txt","w");
+	}
+	else {
+		printf("Usage: ./gcc- filename.c-\n");
+		return 1;
+	}
+
 	yylex();
-	printf("%d erro\(s\) encontrado\(s\)\n", errors);
+	fprintf(yyout, "%d erro(s) encontrado(s)\n", errors);
+
+	return 0;
 }
