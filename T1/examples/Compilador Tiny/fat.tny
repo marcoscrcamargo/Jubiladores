@@ -1,0 +1,10 @@
+{Calcula o factorial de um número}
+read x; 
+if 0 < x then {não computa se x<=0}
+  fact := 1; 
+  repeat
+    fact := fact * x;
+    x := x - 1
+  until x = 0;
+  write fact 
+end
