@@ -1,0 +1,2 @@
+- "Nomes de funções são reconhecidas como ID.": No exemplo dado a função "main" está como "Palavra-chave".
+- "O espaço em branco é ignorado, exceto como separador de IDs, NUMs e Palavras-chave.": Pelo o que eu entendi isso indica que abc123 é pra dar erro pois é um ID e um NUM que não estão separados por espaço em branco. Mas ao mesmo tempo em "x+y" não tem espaço em branco mas o exemplo não aponta erro.

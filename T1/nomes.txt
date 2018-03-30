@@ -1,5 +1,9 @@
-Gabriel Pinto de Camargo - 9293456
-Marcos Cesar Ribeiro de Camargo - 9278045
-Guilherme Hideo Tubone - 9019403
-Lucas de Oliveira Pacheco - 9293182
-Times
+Marcos Cesar Ribeiro de Camargo - 9278045 - Turma 1
+Victor Luiz Roquete Forbes - 9293394 - Turma 1
+Lucas de Oliveira Pacheco - 9293182 - Turma 1
+Gabriel Pinto de Camargo - 9293456 - Turma 1
+Guilherme Hideo Tubone - 9019403 - Turma 1
+
+make - Compila o compilador gcc-
+make test1 - Roda o compilador gcc- em cima do código cases/soma_correct.c-
+make test1 - Roda o compilador gcc- em cima do código cases/soma_incorrect.c-

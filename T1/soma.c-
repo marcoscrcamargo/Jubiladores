@@ -1,10 +1,15 @@
 /** Este programa calcula a soma de dois números fornecidos 
 pelo usuário */
 
-vo@id main(){
+void main(){
 	int x; int y;
 	int resultado;
 	x = input(); y=input();
+
+	if (x == y){
+		print(int);
+	}
+
 	resultado = x+y;
 	output(resultado);
 }
