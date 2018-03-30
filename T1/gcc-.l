@@ -30,13 +30,13 @@ whitespace [ \t\n]+
 
 {whitespace} {}
 
-"else|if|int|return|void|while" {
+else|if|int|return|void|while {
 	fprintf(yyout, "%s Palavra-chave\n", yytext);
 }
 
-"\+"	{ fprintf(yyout, "%s SOMA\n", yytext); }
+"+"		{ fprintf(yyout, "%s SOMA\n", yytext); }
 "-"		{ fprintf(yyout, "%s SUB\n", yytext); }
-"\*"	{ fprintf(yyout, "%s MUL\n", yytext); }
+"*"		{ fprintf(yyout, "%s MUL\n", yytext); }
 "/"		{ fprintf(yyout, "%s DIV\n", yytext); }
 "<"		{ fprintf(yyout, "%s MENOR\n", yytext); }
 "<="	{ fprintf(yyout, "%s MEIGUAL\n", yytext); }
@@ -47,12 +47,12 @@ whitespace [ \t\n]+
 "="		{ fprintf(yyout, "%s ATRIB\n", yytext); }
 ";"		{ fprintf(yyout, "%s PV\n", yytext); }
 ","		{ fprintf(yyout, "%s V\n", yytext); }
-"\("	{ fprintf(yyout, "%s AP\n", yytext); }
-"\)"	{ fprintf(yyout, "%s FP\n", yytext); }
-"\["	{ fprintf(yyout, "%s ACO\n", yytext); }
-"\]"	{ fprintf(yyout, "%s FCO\n", yytext); }
-"\{"	{ fprintf(yyout, "%s ACH\n", yytext); }
-"\}"	{ fprintf(yyout, "%s FCH\n", yytext); }
+"("		{ fprintf(yyout, "%s AP\n", yytext); }
+")"		{ fprintf(yyout, "%s FP\n", yytext); }
+"["		{ fprintf(yyout, "%s ACO\n", yytext); }
+"]"		{ fprintf(yyout, "%s FCO\n", yytext); }
+"{"		{ fprintf(yyout, "%s ACH\n", yytext); }
+"}"		{ fprintf(yyout, "%s FCH\n", yytext); }
 
 {ID}	{ fprintf(yyout, "%s ID\n", yytext); }
 {NUM}	{ fprintf(yyout, "%s NUM\n", yytext); }

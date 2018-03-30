@@ -5,7 +5,7 @@
 # Guilherme Hideo Tubone - 9019403 - Turma 1
 
 all:
-	@lex C-.l 
+	@lex gcc-.l 
 	@gcc lex.yy.c -o gcc- -ll
 	@rm lex.yy.c
 test1:
