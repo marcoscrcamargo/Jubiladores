@@ -5,9 +5,10 @@
 # Guilherme Hideo Tubone - 9019403 - Turma 1
 
 all:
-	lex C-.l 
-	gcc lex.yy.c -o gcc- -ll -g -Wall
+	@lex C-.l 
+	@gcc lex.yy.c -o gcc- -ll
+	@rm lex.yy.c
 test1:
-	./gcc- cases/soma_correct.c-
+	@./gcc- cases/soma_correct.c-
 test2:
-	./gcc- cases/soma_incorrect.c-
+	@./gcc- cases/soma_incorrect.c-	
